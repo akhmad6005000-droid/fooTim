@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Pro - Entraînement avec Timaev</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo::before {
+      content: "⚽";
+      font-size: 28px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      max-width: 500px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #1e3c72;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+    }
+
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+    }
+
+    /* Animation Circle */
+    .hero-visual {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+
+    .glow-circle {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.1) 70%);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 60px rgba(255,255,255,0.5);
+    }
+
+    .floating-icon {
+      position: absolute;
+      font-size: 24px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-icon:nth-child(1) { top: 20%; right: 20%; animation-delay: 0s; }
+    .floating-icon:nth-child(2) { top: 30%; right: 10%; animation-delay: 0.5s; }
+    .floating-icon:nth-child(3) { bottom: 30%; right: 15%; animation-delay: 1s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 50px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .contact-section > p {
+      opacity: 0.8;
+      margin-bottom: 40px;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.3s, background 0.3s;
+      min-width: 280px;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .contact-info {
+      text-align: left;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.6;
+      font-size: 14px;
+    }
+
+    /* Language Switch */
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.3s;
+    }
+
+    .lang-btn.active {
+      background: #fff;
+      color: #1e3c72;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Language Switcher -->
+  <div class="lang-switch">
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Football Pro</div>
+    <nav>
+      <a href="#programs" data-fr="Programmes" data-ru="Программы">Programmes</a>
+      <a href="#schedule" data-fr="Planning" data-ru="Расписание">Planning</a>
+      <a href="#exercises" data-fr="Exercices" data-ru="Упражнения">Exercices</a>
+      <a href="#contact" data-fr="Contact" data-ru="Контакты">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 data-fr="Devenez le meilleur sur le terrain" data-ru="Стань лучшим на поле">
+        Devenez le meilleur sur le terrain
+      </h1>
+      <p data-fr="Entraînements de football professionnels avec le coach Timaev pour les joueurs de tous niveaux. Développez votre technique, votre vitesse, votre endurance et votre intelligence tactique." 
+         data-ru="Профессиональные футбольные тренировки с тренером Тимаевым для игроков любого уровня. Развивайте технику, скорость, выносливость и тактическое мышление.">
+        Entraînements de football professionnels avec le coach Timaev pour les joueurs de tous niveaux. Développez votre technique, votre vitesse, votre endurance et votre intelligence tactique.
+      </p>
+      <div class="buttons">
+        <a href="#start" class="btn-primary" data-fr="Commencer l'entraînement" data-ru="Начать тренировку">
+          Commencer l'entraînement
+        </a>
+        <a href="#contact" class="btn-secondary" data-fr="S'inscrire" data-ru="Записаться">
+          S'inscrire
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="glow-circle"></div>
+      <span class="floating-icon">🏃</span>
+      <span class="floating-icon">⚡</span>
+      <span class="floating-icon">🏆</span>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <h2 data-fr="Contactez-nous" data-ru="Свяжитесь с нами">Contactez-nous</h2>
+    <p data-fr="Inscrivez-vous à un entraînement ou posez vos questions" 
+       data-ru="Запишитесь на тренировку или задайте вопрос">
+      Inscrivez-vous à un entraînement ou posez vos questions
+    </p>
+    
+    <div class="contact-grid">
+      <!-- Phone -->
+      <a href="tel:0767600707" class="contact-card">
+        <div class="icon-box">📞</div>
+        <div class="contact-info">
+          <div class="contact-label" data-fr="Téléphone" data-ru="Телефон">Téléphone</div>
+          <div class="contact-value">0767600707</div>
+        </div>
+      </a>
+      
+      <!-- Email -->
+      <a href="mailto:football.tim.info@gmail.com" class="contact-card">
+        <div class="icon-box">✉️</div>
+        <div class="contact-info">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">football.tim.info@gmail.com</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Football Pro Training. <span data-fr="Tous droits réservés." data-ru="Все права защищены.">Tous droits réservés.</span>
+    <br><br>
+    Coach: <strong>Timaev</strong>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      // Update buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', 
+          (lang === 'fr' && btn.textContent === 'FR') || 
+          (lang === 'ru' && btn.textContent === 'RU')
+        );
+      });
+
+      // Update all elements with data attributes
+      document.querySelectorAll('[data-fr][data-ru]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+    }
+  </script>
+
+</body>
+</html>
