@@ -756,4 +756,432 @@
             }
 
             .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--darker);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">⚽ Football Pro</a>
+            <ul class="nav-links">
+                <li><a href="#programs">Программы</a></li>
+                <li><a href="#schedule">Расписание</a></li>
+                <li><a href="#exercises">Упражнения</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Стань лучшим на поле</h1>
+                <p>Профессиональные футбольные тренировки для игроков любого уровня. Развивай технику, скорость, выносливость и тактическое мышление.</p>
+                <div class="hero-buttons">
+                    <a href="#programs" class="btn btn-primary">Начать тренировку →</a>
+                    <a href="#contact" class="btn btn-secondary">Записаться</a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="floating-icons">
+                    <span class="icon">🏃</span>
+                    <span class="icon">⚡</span>
+                    <span class="icon">🥅</span>
+                    <span class="icon">🏆</span>
+                </div>
+                <div class="soccer-ball"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid fade-in">
+            <div class="stat-card">
+                <span class="stat-number">50+</span>
+                <div class="stat-label">Упражнений</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">4</span>
+                <div class="stat-label">Программы</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">60</span>
+                <div class="stat-label">Минут / тренировка</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <div class="stat-label">Результат</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section class="programs" id="programs">
+        <div class="section-header fade-in">
+            <h2>Программы тренировок</h2>
+            <p>Выбери программу под свой уровень подготовки и цели. Каждая программа разработана профессиональными тренерами.</p>
+        </div>
         
+        <div class="programs-grid">
+            <div class="program-card fade-in">
+                <span class="difficulty beginner">Начинающий</span>
+                <div class="program-icon">🌱</div>
+                <h3>Базовая подготовка</h3>
+                <p>Основы владения мячом, простые передачи, базовая физическая подготовка. Идеально для новичков.</p>
+                <ul class="program-features">
+                    <li>Разминка 10-15 мин</li>
+                    <li>Техника ведения мяча</li>
+                    <li>Простые передачи</li>
+                    <li>Базовая выносливость</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Подробнее</a>
+            </div>
+
+            <div class="program-card fade-in">
+                <span class="difficulty intermediate">Средний</span>
+                <div class="program-icon">⚡</div>
+                <h3>Скорость и выносливость</h3>
+                <p>Интервальные тренировки, развитие скоростных качеств и улучшение игровой выносливости.</p>
+                <ul class="program-features">
+                    <li>Интервальные спринты</li>
+                    <li>Челночный бег</li>
+                    <li>Упражнения с мячом на скорость</li>
+                    <li>VO2 max тренировки</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Подробнее</a>
+            </div>
+
+            <div class="program-card fade-in">
+                <span class="difficulty advanced">Продвинутый</span>
+                <div class="program-icon">🎯</div>
+                <h3>Техника и тактика</h3>
+                <p>Сложные комбинации, тактические схемы, отработка игровых ситуаций и стандартов.</p>
+                <ul class="program-features">
+                    <li>Сложный дриблинг</li>
+                    <li>Тактические схемы 5x2</li>
+                    <li>Игры в ограниченном пространстве</li>
+                    <li>Стандартные положения</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Подробнее</a>
+            </div>
+
+            <div class="program-card fade-in">
+                <span class="difficulty advanced">Профи</span>
+                <div class="program-icon">💪</div>
+                <h3>Силовая подготовка</h3>
+                <p>Комплексная работа в тренажерном зале для развития силы, мощности и профилактики травм.</p>
+                <ul class="program-features">
+                    <li>Приседания и становая тяга</li>
+                    <li>Плиометрические упражнения</li>
+                    <li>Укрепление корпуса</li>
+                    <li>Работа с медболом</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Подробнее</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule" id="schedule">
+        <div class="schedule-container">
+            <div class="section-header fade-in">
+                <h2>Расписание тренировок</h2>
+                <p>Оптимальное распределение нагрузок в течение недели для максимального прогресса.</p>
+            </div>
+            
+            <div class="schedule-grid fade-in">
+                <div class="day-card">
+                    <div class="day-name">Понедельник</div>
+                    <div class="day-content">
+                        <span class="training-type">Техника</span>
+                        <p>Отработка передач, первого касания, ведения мяча</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Вторник</div>
+                    <div class="day-content">
+                        <span class="training-type" style="background: rgba(255, 107, 53, 0.2); color: #ff6b35;">Сила</span>
+                        <p>Силовая тренировка в зале, ноги и корпус</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Среда</div>
+                    <div class="day-content">
+                        <span class="training-type" style="background: rgba(0, 255, 136, 0.2); color: #00ff88;">Восстановление</span>
+                        <p>Легкий бег, растяжка, плавание или велотренажер</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Четверг</div>
+                    <div class="day-content">
+                        <span class="training-type">Скорость</span>
+                        <p>Интервальные спринты, челночный бег, координация</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Пятница</div>
+                    <div class="day-content">
+                        <span class="training-type">Тактика</span>
+                        <p>Игровые упражнения, работа в малых группах</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Суббота</div>
+                    <div class="day-content">
+                        <span class="training-type" style="background: rgba(255, 193, 7, 0.2); color: #ffc107;">Игра</span>
+                        <p>Контрольная игра 5x5 или 7x7</p>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Воскресенье</div>
+                    <div class="day-content">
+                        <span class="training-type" style="background: rgba(136, 146, 176, 0.2); color: #8892b0;">Отдых</span>
+                        <p>Полное восстановление, легкая прогулка</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercises Section -->
+    <section class="exercises" id="exercises">
+        <div class="section-header fade-in">
+            <h2>Упражнения</h2>
+            <p>Ключевые упражнения для развития футбольных навыков</p>
+        </div>
+        
+        <div class="exercises-grid">
+            <div class="exercise-card fade-in">
+                <div class="exercise-image">⚽</div>
+                <div class="exercise-content">
+                    <h3>Ведение с обводкой</h3>
+                    <p>Развитие чувства мяча и координации на скорости. Обводка стоек с финтами.</p>
+                    <div class="exercise-meta">
+                        <span>⏱ 20 мин</span>
+                        <span>📊 Техника</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card fade-in">
+                <div class="exercise-image" style="background: linear-gradient(135deg, #ff6b35, #ff8c5a);">🥅</div>
+                <div class="exercise-content">
+                    <h3>Удары по воротам</h3>
+                    <p>Отработка ударов с разных дистанций и углов. Работа на точность и силу.</p>
+                    <div class="exercise-meta">
+                        <span>⏱ 15 мин</span>
+                        <span>📊 Удар</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card fade-in">
+                <div class="exercise-image" style="background: linear-gradient(135deg, #00ff88, #00cc6a);">🏃</div>
+                <div class="exercise-content">
+                    <h3>Челночный бег</h3>
+                    <p>Развитие скоростно-силовых качеств и выносливости. Интервальная нагрузка.</p>
+                    <div class="exercise-meta">
+                        <span>⏱ 10 мин</span>
+                        <span>📊 Скорость</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card fade-in">
+                <div class="exercise-image" style="background: linear-gradient(135deg, #9c27b0, #e91e63);">🤝</div>
+                <div class="exercise-content">
+                    <h3>Передачи в парах</h3>
+                    <p>Отработка точности передач в движении. Работа обеими ногами.</p>
+                    <div class="exercise-meta">
+                        <span>⏱ 15 мин</span>
+                        <span>📊 Пас</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card fade-in">
+                <div class="exercise-image" style="background: linear-gradient(135deg, #ffc107, #ff9800);">🧠</div>
+                <div class="exercise-content">
+                    <h3>Игра в квадрате</h3>
+                    <p>Развитие периферийного зрения и скорости принятия решений в ограниченном пространстве.</p>
+                    <div class="exercise-meta">
+                        <span>⏱ 20 мин</span>
+                        <span>📊 Тактика</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card fade-in">
+                <div class="exercise-image" style="background: linear-gradient(135deg, #00bcd4, #009688);">⚖️</div>
+                <div class="exercise-content">
+                    <h3>Баланс на одной ноге</h3>
+                    <p>Улучшение устойчивости и координации. Упражнение с мячом для контроля.</p>
+                    <div class="exercise-meta">
+                        <span>⏱ 10 мин</span>
+                        <span>📊 Баланс</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <h2>Запишись на тренировку</h2>
+                <p style="color: var(--gray); margin-bottom: 2rem;">Оставь заявку и наш тренер свяжется с тобой для подбора оптимальной программы.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong style="color: var(--light); display: block; margin-bottom: 0.25rem;">Адрес</strong>
+                            <span>г. Москва, ул. Спортивная, 15</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong style="color: var(--light); display: block; margin-bottom: 0.25rem;">Телефон</strong>
+                            <span>+7 (999) 123-45-67</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉️</div>
+                        <div>
+                            <strong style="color: var(--light); display: block; margin-bottom: 0.25rem;">Email</strong>
+                            <span>info@footballpro.ru</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form fade-in">
+                <form>
+                    <div class="form-group">
+                        <label>Имя</label>
+                        <input type="text" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Уровень подготовки</label>
+                        <select>
+                            <option>Начинающий</option>
+                            <option>Любитель</option>
+                            <option>Полупрофессионал</option>
+                            <option>Профессионал</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Сообщение</label>
+                        <textarea placeholder="Расскажите о ваших целях..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        Отправить заявку →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">💬</a>
+                <a href="#">📸</a>
+                <a href="#">▶️</a>
+            </div>
+            <p class="footer-text">© 2024 Football Pro Training. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'rgba(10, 14, 39, 0.98)';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.padding = '2rem';
+            navLinks.style.gap = '1.5rem';
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+        });
+    </script>
+</body>
+</html>
